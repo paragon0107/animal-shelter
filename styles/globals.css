@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #333;
+  --secondary-color: #555;
+  --accent-color: #f0c14b;
+  --background-color: #fff;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --dark-gray: #333;
+  --font-main: 'Noto Sans KR', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.primary-btn {
+  background-color: var(--accent-color);
+  color: var(--dark-gray);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.primary-btn:hover {
+  background-color: #e0b13b;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.secondary-btn:hover {
+  background-color: #e5e5e5;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #f5f5f5;
+  --light-gray: #1e1e1e;
+  --dark-gray: #121212;
+  --primary-color: #f5f5f5;
+  --secondary-color: #aaa;
+}
+
+body.dark-mode .faq-item {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .dark-mode-btn {
+  background-color: #333;
+  color: #f5f5f5;
+}
