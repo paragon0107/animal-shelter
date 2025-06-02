@@ -7,16 +7,21 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // 로컬 스토리지에서 다크모드 설정 불러오기
-    const savedDarkMode = localStorage.getItem('darkMode') === 'enabled';
-    setDarkMode(savedDarkMode);
-    
-    if (savedDarkMode) {
-      document.body.classList.add('dark-mode');
+    // 클라이언트 사이드에서만 localStorage 접근
+    if (typeof window !== 'undefined') {
+      // 로컬 스토리지에서 다크모드 설정 불러오기
+      const savedDarkMode = localStorage.getItem('darkMode') === 'enabled';
+      setDarkMode(savedDarkMode);
+      
+      if (savedDarkMode) {
+        document.body.classList.add('dark-mode');
+      }
     }
   }, []);
 
   const toggleDarkMode = () => {
+    if (typeof window === 'undefined') return;
+    
     if (darkMode) {
       document.body.classList.remove('dark-mode');
       localStorage.setItem('darkMode', 'disabled');

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from '../styles/Landing.module.css';
-import { FaPaw, FaArrowRight } from 'react-icons/fa';
+import { FaPaw, FaArrowRight, FaHeart } from 'react-icons/fa';
 
 export default function Landing() {
   const router = useRouter();
@@ -75,19 +75,39 @@ export default function Landing() {
 
         <div className={styles.backgroundImages}>
           <div className={`${styles.imageContainer} ${styles.image1} ${loaded ? styles.loaded : ''}`}>
-            <img src="/images/dog.jpg" alt="강아지 이미지" />
+            <img src="/images/dog.jpg" alt="후쿠시마의 버려진 개" />
+            <div className={styles.imageCaption}>
+              <FaHeart className={styles.heartIcon} />
+              <span>주인을 기다리는 후쿠시마의 유기견</span>
+            </div>
           </div>
           <div className={`${styles.imageContainer} ${styles.image2} ${loaded ? styles.loaded : ''}`}>
-            <img src="/images/cat.jpg" alt="고양이 이미지" />
+            <img src="/images/cat.jpg" alt="후쿠시마의 버려진 고양이" />
+            <div className={styles.imageCaption}>
+              <FaHeart className={styles.heartIcon} />
+              <span>방사능 지역에 남겨진 고양이</span>
+            </div>
           </div>
           <div className={`${styles.imageContainer} ${styles.image3} ${loaded ? styles.loaded : ''}`}>
-            <img src="/images/de.jpg" alt="유기동물 이미지" />
+            <img src="/images/de.jpg" alt="후쿠시마의 야생 사슬" />
+            <div className={styles.imageCaption}>
+              <FaHeart className={styles.heartIcon} />
+              <span>오염된 지역에서 생존하는 야생 사슬</span>
+            </div>
           </div>
           <div className={`${styles.imageContainer} ${styles.image4} ${loaded ? styles.loaded : ''}`}>
-            <img src="/images/ca.jpg" alt="유기동물 이미지" />
+            <img src="/images/ca.jpg" alt="후쿠시마의 버려진 소" />
+            <div className={styles.imageCaption}>
+              <FaHeart className={styles.heartIcon} />
+              <span>주인 없이 방치된 농장 동물들</span>
+            </div>
           </div>
           <div className={`${styles.imageContainer} ${styles.image5} ${loaded ? styles.loaded : ''}`}>
-            <img src="/images/pi.jpg" alt="유기동물 이미지" />
+            <img src="/images/pi.jpg" alt="후쿠시마의 버려진 돼지" />
+            <div className={styles.imageCaption}>
+              <FaHeart className={styles.heartIcon} />
+              <span>구조되지 못한 농장 동물</span>
+            </div>
           </div>
         </div>
       </main>

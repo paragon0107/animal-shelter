@@ -29,8 +29,8 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
   return (
     <div>
       <Head>
-        <title>유기동물 홍보 사이트로 이동 중...</title>
-        <meta name="description" content="유기동물 입양을 장려하고 홍보하기 위한 웹사이트입니다." />
+        <title>후쿠시마 유기동물 홍보 사이트</title>
+        <meta name="description" content="후쿠시마 원전 사고로 인해 버려진 동물들의 이야기와 입양 홍보를 위한 웹사이트입니다." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -216,9 +216,7 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
           </div>
         </div>
       </footer>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <p>랜딩 페이지로 이동 중입니다...</p>
-      </div>
+      {/* 불필요한 로딩 메시지 제거 */}
     </div>
   );
 }
