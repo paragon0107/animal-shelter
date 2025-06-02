@@ -34,13 +34,8 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
         <div className={`container ${styles.headerContainer}`}>
           <div className={styles.logo}>유기동물 홍보</div>
           <nav className={styles.nav}>
-            <Link href="/" className={styles.navLink}>홈</Link>
-            <Link href="/animals" className={styles.navLink}>입양 가능한 동물들</Link>
-            <Link href="/adopt" className={styles.navLink}>입양 신청</Link>
+            <Link href="/donate" className={`${styles.navLink} ${styles.donateButton}`}>후원하기</Link>
           </nav>
-          <button className={styles.darkModeBtn} onClick={toggleDarkMode}>
-            {darkMode ? '라이트모드' : '다크모드'}
-          </button>
         </div>
       </header>
 
@@ -49,8 +44,9 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>후쿠시마에 버려진 동물들</h1>
             <p className={styles.subtitle}>福島に放棄された動物たち</p>
-            <div className={styles.date}>2025.06.02 | 관리자</div>
-            <Link href="/animals" className="primary-btn">입양 가능한 동물들 보기</Link>
+            <div className={styles.smallTitle}>집으로 돌아갈 수 없어요...</div>
+            <div className={styles.smallTitle2}>家に帰ることはできません...</div>
+            <Link href="/animals" className="primary-btn">후원하기</Link>
           </div>
           <div className={styles.heroImage}>
             <img src="/images/1.png" alt="유기동물 이미지" />
@@ -60,52 +56,78 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
 
       <section className={styles.featuredArticle}>
         <div className="container">
-          <p className={styles.articleIntro}>매일 10,000 마리의 동물이 버려지고 있습니다.</p>
+          <p className={styles.articleIntro}>원전 사고 후 빈집에 남겨지거나 버려진 동물들..</p>
+          <p className={styles.articleIntro2}>原発事故の後、空の家に残されたり放棄された動物..</p>
           <div className={styles.articleContent}>
-            <div className={styles.socialIcons}>
-              <FaFacebook />
-              <FaTwitter />
-              <FaInstagram />
-              <FaYoutube />
-              <FaShareAlt />
+            <div className={styles.videoContainer}>
+              <iframe 
+                className={styles.videoFrame}
+                src="https://www.youtube.com/embed/571_Ge2Qw7w" 
+                title="후쿠시마 유기동물 구조 영상"
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
             </div>
-            <div className={styles.articleImage}>
-              <img src="/images/2.png" alt="유기견 구조 현장" />
-              <div className={styles.imageCaption}>
-                <h2>후쿠시마 피난 지구 <span className={styles.highlight}>입양해 달라개!</span></h2>
-              </div>
-            </div>
-            <p className={styles.articleText}>
-              후쿠시마 원전 사고 이후 많은 동물들이 버려졌습니다. 
-              이들에게 새로운 가족이 되어주세요.
-            </p>
-            <Link href="/adopt" className="secondary-btn">입양 신청하기</Link>
           </div>
+        </div>
+      </section>
+      
+      <section className={styles.callToAction}>
+        <div className={styles.callToActionContent}>
+          <h2 className={styles.callToActionTitle}>누군가의 반려였던 아이들..</h2>
+          <h3 className={styles.callToActionSubtitle}>이제는 거리의 생존자가 되어 하루하루를 버팁니다.</h3>
+          <p className={styles.callToActionSubtitle}>당신의 손길이, 다시 희망이 될 수 있습니다.</p>
+          <p className={styles.callToActionText}>
+            모든 생명은 평등하게 살아갈 권리가 있는 공간인 사이트에서 진행합니다.<br />
+            아래의 '후원하기' 버튼을 이용해 협코를 통해 후원해주세요.
+          </p>
+          <Link href="/donate" className={`primary-btn ${styles.callToActionButton}`}>후원하기</Link>
         </div>
       </section>
 
       <section className={styles.animalStories}>
-        <Link href="/animals/1" className={styles.storyCard}>
-          <img src="/images/2.png" alt="해피의 이야기" />
-          <div className={styles.storyOverlay}>
-            <h3>해피</h3>
-            <p>후쿠시마 원전 사고 이후 버려진 개들은 야생에서 생존하기 위해 무리를 지어 생활하고 있습니다. 그들에게 새로운 희망을...</p>
-          </div>
-        </Link>
-        <Link href="/animals/2" className={styles.storyCard}>
-          <img src="/images/3.png" alt="럭키의 이야기" />
-          <div className={styles.storyOverlay}>
-            <h3>럭키</h3>
-            <p>많은 동물들이 방사능 오염 지역에 남겨졌습니다. 구조 활동가들의 노력으로 일부는 안전한 곳으로...</p>
-          </div>
-        </Link>
-        <Link href="/animals/3" className={styles.storyCard}>
-          <img src="/images/4.png" alt="초코의 이야기" />
-          <div className={styles.storyOverlay}>
-            <h3>초코</h3>
-            <p>버려진 동물들은 사람의 도움 없이 생존하기 어렵습니다. 당신의 작은 관심이 그들에게는 큰 희망이 됩니다...</p>
-          </div>
-        </Link>
+        <div className="container">
+          <Link href="/animals/1" className={styles.storyCard}>
+            <img src="/images/2.png" alt="시바이누 이야기" />
+            <div className={styles.storyOverlay}>
+              <h3>기다리고 있어요, 아직도…</h3>
+              <p>
+                  떠난 사람들이 다시 돌아올까 오늘도, 내일도, 이렇게 짖습니다.<br/>
+                  이 강아지는 버림받지 않았다고 믿고 있어요.<br/>
+                  그 믿음만으로 하루하루를 버팁니다.
+              </p>
+            </div>
+          </Link>
+          <Link href="/animals/2" className={styles.storyCard}>
+            <img src="/images/3.png" alt="길고양이 이야기" />
+            <div className={styles.storyOverlayright}>
+              <p className={styles.storyHighlight}>
+                    이 한 끼가, 마지막일지도 몰라요.
+              </p>
+              <p>버려졌고, 잊혔고, 이젠 살아남는 일조차 간절합니다.<br/>
+              비에 젖은 바닥 위, 작은 목숨 둘이 겨우 밥 한 끼를 나눕니다.</p>
+            </div>
+          </Link>
+          <Link href="/animals/3" className={styles.storyCard}>
+            <img src="/images/4.png" alt="버려진 강아지 이야기" />
+            <div className={styles.storyOverlay}>
+              <h3>할머니 탓이 아니에요...</h3>
+              <p>“금방 돌아올 거야. 며칠만 참아줘.”<br/>
+                  그렇게 떠난 사람들.
+                  하지만 돌아오지 못한 시간은 너무 길었습니다.<br/>
+                  작은 마당 한켠,
+                  목줄에 묶인  끝까지 기다린 아이는
+                  결국, 다시는 주인을 만나지 못했습니다.<br/>
+                  “우리 개 좀 봐줘요…”
+                  간절히 부탁했던 할머니는
+                  뒤늦은 소식에 자책하셨지만,<br/>
+                  그 누구의 잘못도 아니었습니다.
+                  우린 모두, 준비되지 않았을 뿐이었습니다.
+              </p>
+            </div>
+          </Link>
+        </div>
       </section>
 
       <section className={styles.faq}>
@@ -152,13 +174,41 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.footerContent}>
-            <div className={styles.footerLogo}>유기동물 홍보</div>
-            <div className={styles.footerSocialIcons}>
-              <FaFacebook />
-              <FaTwitter />
-              <FaInstagram />
-              <FaYoutube />
+            <div className={styles.footerLeft}>
+              <div className={styles.footerLogo}>유기동물 홍보</div>
+              <p className={styles.footerTagline}>모든 생명은 소중합니다</p>
+              <div className={styles.footerSocialIcons}>
+                <a href="#" className={styles.socialIcon}><FaFacebook /></a>
+                <a href="#" className={styles.socialIcon}><FaTwitter /></a>
+                <a href="#" className={styles.socialIcon}><FaInstagram /></a>
+                <a href="#" className={styles.socialIcon}><FaYoutube /></a>
+              </div>
             </div>
+            <div className={styles.footerRight}>
+              <div className={styles.footerLinks}>
+                <div className={styles.footerLinkColumn}>
+                  <h4>정보</h4>
+                  <a href="/about">소개</a>
+                  <a href="/team">팀 소개</a>
+                  <a href="/news">뉴스</a>
+                </div>
+                <div className={styles.footerLinkColumn}>
+                  <h4>지원</h4>
+                  <a href="/donate">후원하기</a>
+                  <a href="/volunteer">봄사하기</a>
+                  <a href="/adopt">입양하기</a>
+                </div>
+                <div className={styles.footerLinkColumn}>
+                  <h4>문의</h4>
+                  <a href="/contact">연락하기</a>
+                  <a href="/faq">FAQ</a>
+                  <a href="/privacy">개인정보처리방침</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.footerBottom}>
+            <p>&copy; 2025 유기동물 홍보. All rights reserved.</p>
           </div>
         </div>
       </footer>
