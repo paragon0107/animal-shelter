@@ -14,7 +14,9 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
   const [email, setEmail] = useState('');
   const router = useRouter();
 
-  // 랜딩 페이지에서 메인 페이지로 이동할 수 있도록 자동 리다이렉트 제거
+  useEffect(() => {
+    router.push('/landing');
+  }, [router]);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,7 +51,7 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
             <h1 className={styles.heroTitle}>후쿠시마에 버려진 동물들</h1>
             <p className={styles.subtitle}>福島に放棄された動物たち</p>
             <div className={styles.smallTitle}>집으로 돌아갈 수 없어요...</div>
-            <div className={styles.smallTitle2}>家に帰することはできません...</div>
+            <div className={styles.smallTitle2}>家に帰ることはできません...</div>
             <Link href="https://together.kakao.com/" className="primary-btn">후원하기</Link>
           </div>
           <div className={styles.heroImage}>
@@ -198,7 +200,7 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
                 </div>
                 <div className={styles.footerLinkColumn}>
                   <h4>지원</h4>
-                  <a href="https://together.kakao.com/">후원하기</a>
+                  <a href="/donate">후원하기</a>
                   <a href="/volunteer">봄사하기</a>
                   <a href="/adopt">입양하기</a>
                 </div>

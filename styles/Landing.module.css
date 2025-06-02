@@ -1,0 +1,268 @@
+.container {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo {
+  margin-bottom: 1.5rem;
+}
+
+.logoIcon {
+  font-size: 3rem;
+  color: #FFD700;
+  animation: pulse 2s infinite;
+}
+
+.title {
+  font-size: 3.2rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #FFD700;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subDescription {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.enterButton {
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.enterButton:hover {
+  background-color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.arrowIcon {
+  margin-left: 10px;
+}
+
+.backgroundImages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  z-index: 0;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.8s ease;
+  filter: grayscale(70%);
+}
+
+.imageContainer:hover {
+  filter: grayscale(0%);
+  transform: scale(1.03) !important;
+  z-index: 2;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  transform: translateX(-100px);
+}
+
+.image2 {
+  grid-column: 3 / span 2;
+  grid-row: 1;
+  transform: translateX(100px);
+}
+
+.image3 {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+  transform: translateY(100px);
+}
+
+.image4 {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  transform: translateY(50px);
+}
+
+.image5 {
+  grid-column: 4;
+  grid-row: 2 / span 2;
+  transform: translateX(100px);
+}
+
+.loaded {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.image1.loaded {
+  transform: rotate(-2deg) scale(1.02);
+}
+
+.image2.loaded {
+  transform: rotate(2deg) scale(1.02);
+}
+
+.image3.loaded {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.image4.loaded {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.image5.loaded {
+  transform: rotate(1deg) scale(1.02);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .backgroundImages {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  
+  .image1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .image2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .image3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .image4 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .image5 {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+  }
+}
