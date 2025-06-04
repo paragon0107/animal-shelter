@@ -36,7 +36,7 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
 
       <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
-          <div className={styles.logo}>유기동물 홍보</div>
+          <div className={styles.logo}>폣브리드</div>
           <nav className={styles.nav}>
             <Link href="https://together.kakao.com/" className={`${styles.navLink} ${styles.donateButton}`}>후원하기</Link>
           </nav>
@@ -179,8 +179,9 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
         <div className="container">
           <div className={styles.footerContent}>
             <div className={styles.footerLeft}>
-              <div className={styles.footerLogo}>유기동물 홍보</div>
+              <div className={styles.footerLogo}>펫브리드</div>
               <p className={styles.footerTagline}>모든 생명은 소중합니다</p>
+              <p className={styles.footerTagline}>이미지 사용처 ⓒ후쿠시마에 남겨진 동물들(책공장더불어)</p>
               <div className={styles.footerSocialIcons}>
                 <a href="#" className={styles.socialIcon}><FaFacebook /></a>
                 <a href="#" className={styles.socialIcon}><FaTwitter /></a>
@@ -199,7 +200,7 @@ export default function Home({ darkMode, toggleDarkMode }: HomeProps) {
                 <div className={styles.footerLinkColumn}>
                   <h4>지원</h4>
                   <a href="https://together.kakao.com/">후원하기</a>
-                  <a href="/volunteer">봄사하기</a>
+                  <a href="/volunteer">봉사하기</a>
                   <a href="/adopt">입양하기</a>
                 </div>
                 <div className={styles.footerLinkColumn}>
